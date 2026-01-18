@@ -1,9 +1,8 @@
-
 # X (Twitter) Hybrid Scraper & Downloader 🚀
 
 A powerful, "stealth-mode" tool to scrape and download high-quality images and videos from X (Twitter) accounts.
 
-It uses a **Hybrid Strategy** to automatically handle both small accounts (Fast Scroll) and massive accounts with 12k+ media (Deep Drill Month-by-Month).
+It uses a **Hybrid Strategy** to automatically handle both small accounts (Fast Scroll) and massive accounts with 2k+ media (Deep Drill Month-by-Month).
 
 ## 📂 The Files
 
@@ -25,13 +24,21 @@ It uses a **Hybrid Strategy** to automatically handle both small accounts (Fast 
 
 1.  **Install Python** (if not already installed).
 
-2.  **Install the required libraries:**
-    Open your terminal or command prompt and run this command. It reads `requirements.txt` and installs the correct tools automatically:
+2.  **Set up the Virtual Environment (Recommended):**
+    To keep your system clean, create and activate a virtual environment:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+    *(Windows users: `venv\Scripts\activate`)*
+
+3.  **Install the required libraries:**
+    Run this command to install the correct tools automatically:
     ```bash
     pip install -r requirements.txt
     ```
 
-3.  **Install the browser engine:**
+4.  **Install the browser engine:**
     This tool uses a real browser (Chromium) to browse X. Install it by running:
     ```bash
     playwright install chromium
@@ -70,7 +77,7 @@ python3 media_downloader.py
 
 ## ⚠️ Notes & Troubleshooting
 
-* **Safety:** The script uses a persistent browser context (stored in a `twitter_profile` folder) so you only have to log in once. 
+* **Safety:** The script uses a persistent browser context (stored in a `twitter_profile` folder) so you only have to log in once. **Never upload the `twitter_profile` folder to GitHub.**
 * **403 Forbidden Errors:** Some "Amplify" (Publisher/Ad) videos have strict security tokens and cannot be downloaded by scripts. These will be logged in `failed_downloads.txt`.
 * **Rate Limits:** If you scrape too fast, X may pause the connection. The script handles this by waiting 60s and reloading automatically.
 
